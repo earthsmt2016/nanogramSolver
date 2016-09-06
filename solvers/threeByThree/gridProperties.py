@@ -3,7 +3,7 @@ Class which is used to access the properties of a given 3 by 3 grid.
 """
 
 import sys
-sys.path.insert(0, "/home/earthsmt15/Documents/Coding/nanogramSolver2016/basicFunctions")
+sys.path.insert(0, "/home/earthsmt15/Documents/coding/nanogramSolver/basicFunctions")
 
 import useful_functions
 
@@ -24,12 +24,10 @@ class gridProperties:
 
 	def analyzeNanogramGrid(self):
 		self.convertGridAndSort();
-		if(self.width == self.height[::-1] and max(self.width)!=3 and max(self.height)!=3):
+		if(self.width == self.height[::-1] or (max(self.width)!=3 or max(self.height)!=3) and self.uniqueCombinations[-1]==1):
 			for indexRow,indRow in enumerate(self.plausibleGrid):
 				for indexElement,indElement in enumerate(indRow):
-					if indElement==max(self.uniqueCombinations):
-						self.solutionGrid[indexRow][indexElement]=1;
-					if indElement==min(self.uniqueCombinations):
+					if indElement!=self.uniqueCombinations[-2]:
 						self.solutionGrid[indexRow][indexElement]=1;
 		else:
 			for indexRow,indRow in enumerate(self.plausibleGrid):
