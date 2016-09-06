@@ -3,7 +3,7 @@ Class which is used to solve 3x3 nanogram solver puzzles.
 """
 
 import sys
-sys.path.insert(0, "/home/earthsmt15/Documents/Coding/nanogramSolver2016/basicFunctions")
+sys.path.insert(0, "/home/earthsmt15/Documents/coding/nanogramSolver/basicFunctions")
 
 import useful_functions
 from gridProperties import gridProperties
